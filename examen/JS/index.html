@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario de Equipos Electrónicos</title>
+    <style>
+        body {
+      font-family: Arial, sans-serif;
+  }
+  
+  table {
+      width: 80%; 
+      margin: auto; 
+      border-collapse: collapse;
+      background-color: #6a4a4e; 
+  }
+  
+  th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+  }
+  
+  th {
+      background-color: #5e3b3b; 
+  }
+  
+      </style>
+  </head>
+  <body>
+    
+</head>
+
+<h1 style="text-align: center;">Inventario de Equipos Electrónicos</h1>
+
+<label for="id">Ingrese el ID</label>
+<input type="number" id="id"><br><br>     
+
+<label for="producto">Ingrese el producto</label>
+<input type="text" id="producto" placeholder="Ingrese Producto"><button onclick="buscarProducto()">Buscar</button><br><br>
+
+<label for="fecha">Ingrese la fecha de creación del producto</label>
+<input type="date" id="fecha"><br><br>
+
+<label for="categorias">Ingrese la categoria</label>
+<input type="text" id="categorias"><br><br>
+
+<label for="precios">Ingrese el precio</label>
+<input type="number" id="precios"><br><br>
+
+<button onclick="cargarArreglo()">Guardar Inventario</button>
+<button onclick="actualizarProducto()">Actualizar Inventario</button>
+<button onclick="eliminarProducto()">Eliminar Inventario</button>
+
+<br><br><br>
+
+<table border="1px" width="100%" id="estudiantes">
+    <tr>
+        <th width="20%">ID</th>
+        <th width="20%">PRODUCTO</th>
+        <th width="20%">FECHA DE CREACION DEL PRODUCTO</th>
+        <th width="20%">CATEGORIAS Y SERIE DEL PRODUCTO</th>
+        <th width="20%">PRECIOS</th>
+    </tr>
+
+</table>
+
+
+<body>
+    <script src="app.js"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center;">Arreglo de Inventario</h1>
+
+    <table>
+        <tr>
+            <td colspan="2" style="background-color: antiquewhite;">
+                <h2>Inventario</h2>
+                <label for="codigoInventario">Ingrese codigo</label>
+                <input type="number" id="codigoInventario"> <br><br>
+
+                <label for="articuloInventario">Ingrese articulo</label> 
+                <select name="producto" id="productoInventario">
+                    <option value="Rubor">Rubor 50Lps</option>
+                    <option value="Delineador">Delineador 45Lps</option>
+                    <option value="Lapiz_labial">Lapiz Labial 60Lps</option>
+                    <option value="Brocha">Brocha 60Lps</option>
+                    <option value="Labial">Labial 40Lps</option>
+                    <option value="Esponja">Esponja 25Lps</option>
+                    <option value="Corrector">Corrector 80Lps</option>
+                    <option value="Base">Base 100Lps</option>
+                    <option value="Contorno">Contorno 80Lps</option>
+                </select>
+                <br><br>
+
+                <label for="entradas">Entradas</label>
+                <input type="number" id="entradas"> <br><br>
+
+                <label for="salidas">Salidas</label>
+                <input type="number" id="salidas"> <br><br>
+
+                <label for="stock">Stock</label>
+                <input type="number" id="stock"><br><br>
+                
+                <button onclick="cargarArreglo()">Guardar Inventario</button>
+                <button onclick="actualizarInventario()">Actualizar Inventario</button>
+                <button onclick="eliminarArticulo()">Eliminar Inventario</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="background-color: antiquewhite;">
+                <table id="Inventario" style="background-color: darkorange;">
+                    <tr>
+                        <th width="10%">Codigo</th>
+                        <th width="10%">Articulo</th>
+                        <th width="10%">Entradas</th>
+                        <th width="10%">Salidas</th>
+                        <th width="10%">Stock</th>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td colspan="2" style="background-color: antiquewhite;">
+                <h2>Ventas</h2>
+                <label for="codigoEntrada">Ingrese codigo</label>
+                <input type="number" id="codigoEntrada"> <br><br>
+
+                <label for="articuloEntrada">Ingrese articulo</label> 
+                <select name="producto" id="productoEntrada">
+                    <option value="Rubor">Rubor 50Lps</option>
+                    <option value="Delineador">Delineador 45Lps</option>
+                    <option value="Lapiz_labial">Lapiz Labial 60Lps</option>
+                    <option value="Brocha">Brocha 60Lps</option>
+                    <option value="Labial">Labial 40Lps</option>
+                    <option value="Esponja">Esponja 25Lps</option>
+                    <option value="Corrector">Corrector 80Lps</option>
+                    <option value="Base">Base 100Lps</option>
+                    <option value="Contorno">Contorno 80Lps</option>
+                </select>
+                <br><br>
+
+                <label for="fechaEntrada">Fecha</label>
+                <input type="date" id="fechaEntrada"> <br><br>
+
+                <label for="cantidadEntrada">Cantidad</label>
+                <input type="number" id="cantidadEntrada"><br><br>
+
+                <label for="TotalEntrada">El Total de la transacción es:</label>
+                <input type="text" id="TotalEntrada"placeholder="Total Entradas"> 
+                <br><br>
+
+                <button onclick="cargarEntrada()">Guardar Entrada</button>
+                <button onclick="actualizarEntrada()">Actualizar Entrada</button>
+                <button onclick="eliminarEntrada()">Eliminar Entrada</button>
+                <button onclick="calcularEntradas()">Calcular Total Entradas</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="background-color: antiquewhite;">
+                <table id="Inventario2" style="background-color: lawngreen;">
+                    <tr>
+                        <th width="20%">Codigo</th>
+                        <th width="20%">Articulo</th>
+                        <th width="20%">Fecha</th>
+                        <th width="20%">Cantidad</th>
+                        <th width="20%">Total de la transacción</th>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td colspan="2" style="background-color: antiquewhite;">
+                <h2>Compras</h2>
+                <label for="codigoSalida">Ingrese codigo</label>
+                <input type="number" id="codigoSalida"> <br><br>
+
+                <label for="articuloSalida">Ingrese articulo</label> 
+                <select name="producto" id="productoSalida">
+                    <option value="Rubor">Rubor 50Lps</option>
+                    <option value="Delineador">Delineador 45Lps</option>
+                    <option value="Lapiz_labial">Lapiz Labial 60Lps</option>
+                    <option value="Brocha">Brocha 60Lps</option>
+                    <option value="Labial">Labial 40Lps</option>
+                    <option value="Esponja">Esponja 25Lps</option>
+                    <option value="Corrector">Corrector 80Lps</option>
+                    <option value="Base">Base 100Lps</option>
+                    <option value="Contorno">Contorno 80Lps</option>
+                </select>
+                <br><br>
+
+                <label for="fechaSalida">Fecha</label>
+                <input type="date" id="fechaSalida"> <br><br>
+
+                <label for="cantidadSalida">Cantidad</label>
+                <input type="number" id="cantidadSalida"><br><br>
+
+                <label for="TotalSalida">El Total de la transacción es:</label>
+                <input type="text" id="TotalSalida" placeholder="Total Salidas"> <br>
+                <br>
+
+                <button onclick="cargarSalida()">Guardar Salida</button>
+                <button onclick="actualizarSalida()">Actualizar Salida</button>
+                <button onclick="eliminarSalida()">Eliminar Salida</button>
+                <button onclick="calcularSalidas()">Calcular Total Salidas</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="background-color: antiquewhite;">
+                <table id="Inventario3" style="background-color: gold;">
+                    <tr>
+                        <th width="20%">Codigo</th>
+                        <th width="20%">Articulo</th>
+                        <th width="20%">Fecha</th>
+                        <th width="20%">Cantidad</th>
+                        <th width="20%">Total de la transacción</th>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
